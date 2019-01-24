@@ -1,0 +1,15 @@
+com\qa\business\service\QuestionServiceImpl.class
+com\qa\business\service\QuestionService.class
+com\qa\persistence\repository\QuestionDBRepository.class
+com\qa\persistence\domain\Question.class
+com\qa\persistence\domain\Account.class
+com\qa\persistence\repository\QuestionRepository.class
+com\qa\rest\AccountEndpoint.class
+com\qa\business\service\AccountServiceImpl.class
+com\qa\business\service\AccountService.class
+com\qa\util\JSONUtil.class
+com\qa\rest\QuestionEndpoint.class
+com\qa\persistence\repository\AccountRepository.class
+com\qa\rest\CORSFilter.class
+com\qa\persistence\repository\AccountDBRepository.class
+com\qa\rest\JAXActivator.class
