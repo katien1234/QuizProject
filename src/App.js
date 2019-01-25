@@ -4,6 +4,7 @@ import Titles from './components/Titles.js';
 import Form from './components/Form.js';
 import Question from './components/Question.js';
 import Answer from './components/Answer.js';
+import Timer from './components/Timer.js';
 
 
 class App extends Component {
@@ -11,15 +12,16 @@ class App extends Component {
         super();
 
     this.clickTrue = this.clickTrue.bind(this);
-     this.clickFalse = this.clickFalse.bind(this);
-
-
+    this.clickFalse = this.clickFalse.bind(this);
+    this.nextQuestion = this.nextQuestion.bind(this);
+   
     }
 
     state = {
       question: undefined,
       answer: undefined,
-      questionList: []
+      questionList: [],
+      counter: 0
     }
 
 getQuestion = async (e) => {
@@ -47,6 +49,12 @@ getQuestion = async (e) => {
 
 }
 
+nextQuestion() {
+  this.setState({
+    counter: this.state.counter+1,
+    question: this.state.questionList[0].question
+  })
+}
 
 clickTrue(){
   if (this.state.answer == "True"){
@@ -62,18 +70,18 @@ clickFalse(){
   else console.log("blah")
 }
 
-
-
   render() {
     return (
       <div className="App">
         <Titles/>
         <Form getQuestion={this.getQuestion} />
         <Question
-        question = {this.state.question}
+        question = {this.state.question} 
         />
       <Answer clickTrue={this.clickTrue}
       clickFalse={this.clickFalse}/>
+      <Timer start/>
+      <button onClick={this.nextQuestion}>Next</button>
       </div>
     );
   }
