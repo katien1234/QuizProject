@@ -5,7 +5,8 @@ import Form from './components/Form.js';
 import Question from './components/Question.js';
 import Answer from './components/Answer.js';
 import Timer from './components/Timer.js';
-import Quiz from './Quiz.js'
+import Quiz from './Quiz.js';
+import Login from './Login.js';
 
 
 class App extends Component {
@@ -27,7 +28,10 @@ class App extends Component {
 
 getQuestion = async (e) => {
   e.preventDefault();
-  const api_call = await fetch('http://localhost:8080/QuizAPI/api/question/getQuestion');
+  const api_call = await fetch('http://localhost:8080/QuizAPI/api/question/getQuestion',{
+    method:'GET',
+
+  });
   const response = await api_call.json();
   
   const tempQuestionList = []
@@ -83,6 +87,7 @@ clickFalse(){
           <p>
             Score:&nbsp;{this.state.counter}
           </p>
+          <Login/>
       </div>
     );
   }
