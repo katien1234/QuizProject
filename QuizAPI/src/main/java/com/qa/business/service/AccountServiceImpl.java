@@ -19,17 +19,17 @@ public class AccountServiceImpl implements AccountService {
 		return repo.createAccount(account);
 	}
 
-	public String deleteAccount(Long id) {
-		return repo.deleteAccount(id);
+	public String deleteAccount(String email) {
+		return repo.deleteAccount(email);
 	}
 
 	public void setRepo(AccountRepository repo) {
 		this.repo = repo;
 	}
 
-	public String updateAccount(Long id, String  account) {
+	public String updateAccount(String email, String  account) {
 
-		return repo.updateAccount(id, account);
+		return repo.updateAccount(email, account);
 
 	}
 

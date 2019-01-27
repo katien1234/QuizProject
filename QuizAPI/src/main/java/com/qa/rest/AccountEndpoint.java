@@ -33,18 +33,18 @@ public class AccountEndpoint {
 	}
 	
 
-	@Path("/deleteAccount/{id}")
+	@Path("/deleteAccount/{email}")
 	@DELETE
 	@Produces({ "application/json" })
-	public String deleteAccount(@PathParam("id") Long id) {
-		return service.deleteAccount(id);
+	public String deleteAccount(@PathParam("id") String email) {
+		return service.deleteAccount(email);
 	}
 	
-	@Path("/updateAccount/{id}")
+	@Path("/updateAccount/{email}")
 	@DELETE 
 	@Produces({"application/json"})
-	public String updateAccount(@PathParam("id") Long id, String account) {
-		return service.updateAccount(id, account);
+	public String updateAccount(@PathParam("email") String email, String account) {
+		return service.updateAccount(email, account);
 	}
 	
 	public void setService(AccountService service) {

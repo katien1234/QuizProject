@@ -10,7 +10,7 @@ public class Account {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long accountId;
+	private String email;
 	private String username;
 	private String password;
 	private Long highscore;
@@ -19,15 +19,15 @@ public class Account {
 
 	}
 	
-	public Account(Long accountId, String username, String password, Long highscore) {
-		this.accountId = accountId;
+	public Account(String email, String username, String password, Long highscore) {
+		this.email = email;
 		this.username = username;
 		this.password = password;
 		this.highscore = highscore;
 	}
 
-	public Long getAccountId() {
-		return accountId;
+	public String getEmail() {
+		return email;
 	}
 		
 	
@@ -54,10 +54,5 @@ public class Account {
 	public void setHighscore(Long highscore) {
 		this.highscore = highscore;
 	}
-	
-	
-	
-	
-	
 	
 }

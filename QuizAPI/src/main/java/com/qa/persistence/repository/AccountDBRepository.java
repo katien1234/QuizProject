@@ -38,16 +38,16 @@ public class AccountDBRepository implements AccountRepository {
 	}
 	
 	@Transactional(REQUIRED)
-	public String deleteAccount(Long id) {
-		Account accountInDB = findAccount(id);
+	public String deleteAccount(String email) {
+		Account accountInDB = findAccount(email);
 		if (accountInDB != null) {
 			manager.remove(accountInDB);
 		}
 		return "{\"message\": \"Account sucessfully deleted\"}";
 	}
 	
-	public String updateAccount(Long id, String account) {
-		Account theAccount = findAccount(id);
+	public String updateAccount(String email, String account) {
+		Account theAccount = findAccount(email);
 		manager.remove(theAccount);;
 		Account anAccount = util.getObjectForJSON(account,  Account.class);
 		manager.persist(anAccount);
@@ -56,8 +56,8 @@ public class AccountDBRepository implements AccountRepository {
 	}
 	
 	
-	private Account findAccount(Long id) {
-		return manager.find(Account.class, id);
+	private Account findAccount(String email) {
+		return manager.find(Account.class, email);
 	}
 	
 	public void setManager(EntityManager manager) {

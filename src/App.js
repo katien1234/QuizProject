@@ -5,6 +5,7 @@ import Form from './components/Form.js';
 import Question from './components/Question.js';
 import Answer from './components/Answer.js';
 import Timer from './components/Timer.js';
+import Quiz from './Quiz.js'
 
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
 
     this.clickTrue = this.clickTrue.bind(this);
     this.clickFalse = this.clickFalse.bind(this);
-    this.nextQuestion = this.nextQuestion.bind(this);
+   
    
     }
 
@@ -35,7 +36,8 @@ getQuestion = async (e) => {
     let tempQuestion = {
         id: i,
         question: response[i].question,
-        answer: response[i].answer
+        answer: response[i].answer,
+        questionId: response[i].questionId
     }
       tempQuestionList.push(tempQuestion);
     }
@@ -45,20 +47,17 @@ getQuestion = async (e) => {
     question: response[0].question,
     answer: response[0].answer,
     questionList: tempQuestionList,
+    counter: 0
   });
 
-}
-
-nextQuestion() {
-  this.setState({
-    counter: this.state.counter+1,
-    question: this.state.questionList[0].question
-  })
 }
 
 clickTrue(){
   if (this.state.answer == "True"){
     console.log("Correct")
+    this.setState({
+      counter: this.state.counter +1
+    })
   }
   else console.log("blah")
 }
@@ -81,7 +80,9 @@ clickFalse(){
       <Answer clickTrue={this.clickTrue}
       clickFalse={this.clickFalse}/>
       <Timer start/>
-      <button onClick={this.nextQuestion}>Next</button>
+          <p>
+            Score:&nbsp;{this.state.counter}
+          </p>
       </div>
     );
   }
