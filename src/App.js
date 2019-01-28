@@ -7,6 +7,7 @@ import Answer from './components/Answer.js';
 import Timer from './components/Timer.js';
 import Quiz from './Quiz.js';
 import Login from './Login.js';
+import SignIn from './SignIn.js';
 
 
 class App extends Component {
@@ -73,11 +74,8 @@ clickFalse(){
   else console.log("blah")
 }
 
-  render() {
-    return (
-      <div className="App">
-        <Titles/>
-        <Form getQuestion={this.getQuestion} />
+/* Can go in ap render if want it on app page
+<Form getQuestion={this.getQuestion} />
         <Question
         question = {this.state.question} 
         />
@@ -86,8 +84,14 @@ clickFalse(){
       <Timer start/>
           <p>
             Score:&nbsp;{this.state.counter}
-          </p>
-          <Login/>
+          </p>*/
+
+
+  render() {
+    return (
+      <div className="App">
+        <Titles/>
+        <SignIn/>
       </div>
     );
   }

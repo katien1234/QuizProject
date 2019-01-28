@@ -16,7 +16,7 @@ class Login extends Component {
         
         const requestbody = {
             email: e.target.elements.email.value,
-            username: e.target.elements.email.value,
+            username: e.target.elements.username.value,
             password: e.target.elements.password.value
         }
         const api_call = await fetch('http://localhost:8080/QuizAPI/api/account/updateAccount/' + requestbody.email,{
@@ -36,7 +36,7 @@ class Login extends Component {
             email: e.target.elements.email.value,
            
         }
-        const api_call = await fetch("http://localhost:8080/QuizAPI/api/account/deleteAccount/" + requestbody,{
+        const api_call = await fetch('http://localhost:8080/QuizAPI/api/account/deleteAccount/' + requestbody,{
             method: 'DELETE',
         });
     
@@ -50,11 +50,11 @@ createAccount = async (e) => {
     e.preventDefault();
     const requestbody = {
         email: e.target.elements.email.value,
-        username: e.target.elements.email.value,
+        username: e.target.elements.username.value,
         password: e.target.elements.password.value
     }
     const api_call = await fetch('http://localhost:8080/QuizAPI/api/account/createAccount',{
-        method: 'GET',
+        method: 'POST',
         body: JSON.stringify(requestbody)
     });
 
@@ -85,7 +85,7 @@ render(){
           <form className="login"onSubmit={this.verifyAccount}>
           <input name="email" type="text" placeholder="Enter email address here"/>
           <input name="password" type="password" placeholder="Enter password here"/> 
-          <button>Submit</button>
+          <button>Login</button>
           </form>  
           <form className="SignUp"onSubmit={this.createAccount}>
           <input name="email" type="text" placeholder="Enter email address here"/>
@@ -103,7 +103,6 @@ render(){
           <input name="password" type="password" placeholder="Enter password here"/> 
           <button>Update account</button>
           </form> 
-
         </div>
     )
 }
