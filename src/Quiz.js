@@ -6,31 +6,31 @@ class Quiz extends Component {
     state = {
         question: undefined,
         answer: undefined,
-        questionList: [],
+        quizList: [],
         counter: 0
       }
 
-    getQuestion = async (e) => {
+    getQuiz = async (e) => {
         e.preventDefault();
-        const api_call = await fetch('http://localhost:8080/QuizAPI/api/question/getQuestion');
+        const api_call = await fetch('http://localhost:8080/QuizAPI/api/quiz/getQuiz');
         const response = await api_call.json();
         
-        const tempQuestionList = []
+        const tempQuizList = []
         var i= 0
           for(let i=0; i< response.length; i++){
-          let tempQuestion = {
+          let tempQuiz = {
               id: i,
               question: response[i].question,
               answer: response[i].answer
           }
-            tempQuestionList.push(tempQuestion);
+            tempQuizList.push(tempQuiz);
           }
         console.log(response);
       
         this.setState({
           question: response[0].question,
           answer: response[0].answer,
-          questionList: tempQuestionList,
+          quizList: tempQuizList,
           counter: 0
         });
       
@@ -40,8 +40,8 @@ class Quiz extends Component {
     render() {
       return (
         <div className="Quiz">
-        <button onClick={this.getQuestion}>Start</button>
-          {this.state.questionList.map((item,key) => 
+        <button onClick={this.getQuiz}>Start</button>
+          {this.state.quizList.map((item,key) => 
             <DisplayQuiz item={item} key={item.id}/>)}
   
         </div>

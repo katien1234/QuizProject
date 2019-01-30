@@ -31,7 +31,7 @@ secondsToTime(secs){
   }
 
   startTimer() {
-    if (this.timer == 0 && this.state.seconds > 0) {
+    if (this.timer === 0 && this.state.seconds > 0) {
       this.timer = setInterval(this.countDown, 1000);
     }
   }
@@ -46,7 +46,7 @@ countDown() {
     });
     
     
-    if (seconds == 0) { 
+    if (seconds === 0) { 
       clearInterval(this.timer);
     }
   }
