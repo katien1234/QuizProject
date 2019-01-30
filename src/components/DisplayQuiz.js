@@ -14,7 +14,7 @@ class DisplayQuiz extends Component {
     state={
         question: undefined,
         answer: undefined,
-        counter: 0,
+        counter: "",
         
     }
 
@@ -22,20 +22,24 @@ class DisplayQuiz extends Component {
         if (this.state.answer === "True"){
           console.log("Correct")
           this.setState({
-            counter: this.state.counter +1
+            counter: "Correct"
           })
         }
-        else console.log("blah")
+        else this.setState({
+            counter: "Incorrect"
+          })
       }
 
       clickFalse(){
         if(this.state.answer === "False"){
           console.log("Correct")
           this.setState({
-            counter: this.state.counter +1
+            counter: "Correct"
           })
         }
-        else console.log("blah")
+        else this.setState({
+            counter: "Incorrect"
+          })
       }
       
       componentDidMount(){
@@ -54,7 +58,7 @@ class DisplayQuiz extends Component {
                 <button name="True" onClick={this.clickTrue}>True</button> 
                 <button name="False" onClick={this.clickFalse}> False </button> 
                 <p>
-            Score:&nbsp;{this.state.counter}
+           {this.state.counter}
           </p>
             </div>
         );
