@@ -4,6 +4,7 @@ import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -35,15 +36,15 @@ public class QuestionEndpoint {
 	@Path("/deleteQuestion/{id}")
 	@DELETE
 	@Produces({ "application/json" })
-	public String deleteQuestion(@PathParam("id") Long id) {
-		return service.deleteQuestion(id);
+	public String deleteQuestion(@PathParam("id") String question) {
+		return service.deleteQuestion(question);
 	}
 	
 	@Path("/updateQuestion/{id}")
-	@DELETE 
+	@PUT
 	@Produces({"application/json"})
-	public String updateQuestion(@PathParam("id") Long id, String question) {
-		return service.updateQuestion(id, question);
+	public String updateQuestion(@PathParam("id") String question) {
+		return service.updateQuestion(question);
 	}
 	
 	

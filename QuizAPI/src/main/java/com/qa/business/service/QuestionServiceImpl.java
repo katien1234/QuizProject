@@ -16,17 +16,17 @@ public class QuestionServiceImpl implements QuestionService {
 		return repo.createQuestion(question);
 	}
 
-	public String deleteQuestion(Long id) {
-		return repo.deleteQuestion(id);
+	public String deleteQuestion(String question) {
+		return repo.deleteQuestion(question);
 	}
 
 	public void setRepo(QuestionRepository repo) {
 		this.repo = repo;
 	}
 
-	public String updateQuestion(Long id, String  question) {
+	public String updateQuestion(String  question) {
 
-		return repo.updateQuestion(id, question);
+		return repo.updateQuestion(question);
 
 	}
 

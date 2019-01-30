@@ -7,5 +7,6 @@ public interface AccountRepository {
 	String createAccount(String account);
 	String deleteAccount(String email);
 	String updateAccount(String email, String account);
-	
+	String verifyAccount(String account);
+
 }

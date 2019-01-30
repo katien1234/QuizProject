@@ -6,6 +6,6 @@ public interface AccountService {
 	String addAccount(String account);
 	String deleteAccount(String email);
 	String updateAccount(String email, String account);
-	
+	String verifyAccount(String account);
 
 }

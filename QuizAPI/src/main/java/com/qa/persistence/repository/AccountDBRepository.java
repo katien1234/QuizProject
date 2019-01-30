@@ -41,20 +41,31 @@ public class AccountDBRepository implements AccountRepository {
 	public String deleteAccount(String email) {
 		Account accountInDB = findAccount(email);
 		if (accountInDB != null) {
-			manager.remove(accountInDB);
+			manager.remove(accountInDB);   
 		}
 		return "{\"message\": \"Account sucessfully deleted\"}";
 	}
 	
+	@Transactional (REQUIRED)
 	public String updateAccount(String email, String account) {
 		Account theAccount = findAccount(email);
-		manager.remove(theAccount);;
+		manager.remove(theAccount);
 		Account anAccount = util.getObjectForJSON(account,  Account.class);
 		manager.persist(anAccount);
 		
-		return null;
+		return "{\"message\": \"Account sucessfully updated\"}";
 	}
 	
+	@Transactional (REQUIRED)
+	public String verifyAccount(String account) {
+		Account userToVerify = util.getObjectForJSON(account, Account.class);
+		Account foundAccount = findAccount(userToVerify.getEmail());
+			if (userToVerify.getPassword().equals(foundAccount.getPassword())) {
+				return "{\"message\": \"Login sucessfull\"}";
+			}
+		
+			return "{\"message\": \"Incorrect password or email\"}";
+	}
 	
 	private Account findAccount(String email) {
 		return manager.find(Account.class, email);
@@ -67,6 +78,7 @@ public class AccountDBRepository implements AccountRepository {
 	public void setUtil(JSONUtil util) {
 		this.util = util;
 	}
+
 	
 	
 }

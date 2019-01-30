@@ -40,26 +40,26 @@ public class QuestionDBRepository implements QuestionRepository {
 	}
 
 	@Transactional(REQUIRED)
-	public String deleteQuestion(Long id) {
-		Question questionInDB = findQuestion(id);
+	public String deleteQuestion(String question) {
+		Question questionInDB = findQuestion(question);
 		if (questionInDB != null) {
 			manager.remove(questionInDB);
 		}
 		return "{\"message\": \"Question sucessfully deleted\"}";
 	}
 	
-	public String updateQuestion(Long id, String question) {
-		Question theQuestion = findQuestion(id);
+	public String updateQuestion(String question) {
+		Question theQuestion = findQuestion(question);
 		manager.remove(theQuestion);;
 		Question anQuestion = util.getObjectForJSON(question,  Question.class);
 		manager.persist(anQuestion);
 		
-		return null;
+		return "{\"message\": \"Question sucessfully updated\"}";
 	}
 	
 	
-	private Question findQuestion(Long id) {
-		return manager.find(Question.class, id);
+	private Question findQuestion(String question) {
+		return manager.find(Question.class, question);
 	}
 	
 	public void setManager(EntityManager manager) {

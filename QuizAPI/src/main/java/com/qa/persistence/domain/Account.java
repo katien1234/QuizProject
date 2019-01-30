@@ -1,14 +1,12 @@
 package com.qa.persistence.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Account {
 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	@Id
 	private String email;
 	private String username;
@@ -17,6 +15,22 @@ public class Account {
 	
 	public Account() {
 
+	}
+	
+	public Account(String email) {
+		setEmail(email);
+		
+	}
+	
+	public Account(String email, String username, String password) {
+		setEmail(email);
+		setPassword(username);
+		setPassword(password);
+	}
+	
+	public Account(String email, String password) {
+		setEmail(email);
+		setPassword(password);
 	}
 	
 	public Account(String email, String username, String password, Long highscore) {
@@ -29,7 +43,11 @@ public class Account {
 	public String getEmail() {
 		return email;
 	}
-		
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	
 	public String getUsername() {
 		return username;

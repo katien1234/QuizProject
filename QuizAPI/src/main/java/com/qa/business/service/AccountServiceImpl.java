@@ -33,4 +33,9 @@ public class AccountServiceImpl implements AccountService {
 
 	}
 
+	
+	public String verifyAccount(String account) {
+		return repo.verifyAccount(account);
+	}
+
 }

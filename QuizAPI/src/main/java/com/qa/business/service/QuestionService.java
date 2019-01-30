@@ -5,8 +5,8 @@ public interface QuestionService {
 	
 	String getQuestion();
 	String addQuestion(String question);
-	String deleteQuestion(Long id);
-	String updateQuestion(Long id, String question);
+	String deleteQuestion(String question);
+	String updateQuestion(String question);
 	
 	
 	
