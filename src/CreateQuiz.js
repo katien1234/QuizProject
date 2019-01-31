@@ -90,6 +90,36 @@ updateQuiz = async (e) => {
       
       }
 
+      getQuizByCat = async (e) => {
+        e.preventDefault();
+        const requestbody = {
+           
+            category: e.target.elements.category.value
+        }
+        const api_call = await fetch('http://localhost:8080/QuizAPI/api/quiz/getQuiz', + requestbody.category);
+        const response = await api_call.json();
+        
+        const tempQuizList = []
+        var i= 0
+          for(let i=0; i< response.length; i++){
+          let tempQuiz = {
+              id: i,
+              question: response[i].question,
+              answer: response[i].answer
+          }
+            tempQuizList.push(tempQuiz);
+          }
+        console.log(response);
+      
+        this.setState({
+          question: response[0].question,
+          answer: response[0].answer,
+          quizList: tempQuizList,
+          counter: 0
+        });
+      
+      }
+
    
 
 
@@ -119,6 +149,14 @@ render(){
           <button onClick={this.getQuiz}>Start</button>
           {this.state.quizList.map((item,key) => 
             <Question item={item} key={item.id}/>)}
+           <form>
+            <Quiz/>
+            <input name="category" type="text" placeholder="Username or Category"/>
+           <button onClick={this.getQuizByCat}>Get questions by category</button>
+          <button onClick={this.getQuizByCat}>Start</button>
+          {this.state.quizList.map((item,key) => 
+            <Question item={item} key={item.id}/>)}
+            </form>
         </div>
     )
 }
