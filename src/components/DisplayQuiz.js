@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Component.css';
 
 
 
@@ -54,9 +55,10 @@ class DisplayQuiz extends Component {
     render() {
         return (
             <div className="quiz">
-                <p>{this.props.item.question}</p>
+                <p>
+                    {this.props.item.question}</p>
                 <button name="True" onClick={this.clickTrue}>True</button> 
-                <button name="False" onClick={this.clickFalse}> False </button> 
+                <button id = "True"name="False" onClick={this.clickFalse}> False </button> 
                 <p>
            {this.state.counter}
           </p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Quiz from './Quiz.js'
 import Question from './components/Question.js'
+import './CreateQuiz.css';
 
 class CreateQuiz extends Component {
 
@@ -119,44 +120,42 @@ updateQuiz = async (e) => {
         });
       
       }
-
-   
-
-
+    
 render(){
     return(
         <div>
+        <p className="CreateQuizText">
+            <h1> Create your own Quiz! </h1> 
+            </p>
+            <p>
            <form className="createQuiz"onSubmit={this.createQuiz}>
-          <input name="question" type="text" placeholder="Question"/>
-           <input name="answer" type="text" placeholder="Answer: True or False"/>
-            <input name="category" type="text" placeholder="Username or Category"/>
+          <input name="question" type="text" placeholder="Question"/><br/>
+           <input name="answer" type="text" placeholder="Answer: True or False"/><br/>
+            <input name="category" type="text" placeholder="Username or Category"/><br/>
           <button>Create a question!</button>
            </form> 
+           </p>
+           <p>
           <form className="updateQuiz"onSubmit={this.updateQuiz}>
-          <input name="question" type="text" placeholder="Question"/>
-           <input name="answer" type="text" placeholder="Answer: True or False"/>
-            <input name="category" type="text" placeholder="Username or Category"/>
+          <input name="question" type="text" placeholder="Question"/><br/>
+           <input name="answer" type="text" placeholder="Answer: True or False"/><br/>
+            <input name="category" type="text" placeholder="Username or Category"/><br/>
           <button>Update question</button>
           </form>
+          </p>
+          <p>
           <form className="deleteQuiz"onSubmit={this.deleteQuiz}>
-          <input name="question" type="text" placeholder="Question"/>
-           <input name="answer" type="text" placeholder="Answer: True or False"/>
-            <input name="category" type="text" placeholder="Username or Category"/>
+          <input name="question" type="text" placeholder="Question"/><br/>
+           <input name="answer" type="text" placeholder="Answer: True or False"/><br/>
+            <input name="category" type="text" placeholder="Username or Category"/><br/>
           <button>Delete question</button>
           </form> 
-         <Quiz/>
+          </p>
+       <p className="getQuestions">
            <button onClick={this.getQuiz}>Get questions</button>
-          <button onClick={this.getQuiz}>Start</button>
           {this.state.quizList.map((item,key) => 
             <Question item={item} key={item.id}/>)}
-           <form>
-            <Quiz/>
-            <input name="category" type="text" placeholder="Username or Category"/>
-           <button onClick={this.getQuizByCat}>Get questions by category</button>
-          <button onClick={this.getQuizByCat}>Start</button>
-          {this.state.quizList.map((item,key) => 
-            <Question item={item} key={item.id}/>)}
-            </form>
+            </p>
         </div>
     )
 }

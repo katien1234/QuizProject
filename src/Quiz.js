@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import DisplayQuiz from './components/DisplayQuiz';
+import Timer from './components/Timer';
+
 
 class Quiz extends Component {
 
@@ -7,9 +9,10 @@ class Quiz extends Component {
         question: undefined,
         answer: undefined,
         quizList: [],
-        counter: 0
+        counter: 0,
       }
 
+ 
     getQuiz = async (e) => {
         e.preventDefault();
         const api_call = await fetch('http://localhost:8080/QuizAPI/api/quiz/getQuiz');
@@ -35,15 +38,16 @@ class Quiz extends Component {
         });
       
       }
-
+ 
 
     render() {
       return (
         <div className="Quiz">
         <button onClick={this.getQuiz}>Start</button>
+        
           {this.state.quizList.map((item,key) => 
             <DisplayQuiz item={item} key={item.id}/>)}
-  
+ 
         </div>
         
       );

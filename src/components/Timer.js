@@ -4,7 +4,7 @@ class Timer extends Component {
   constructor() {
     super()
     
-    this.state = { time: {}, seconds: 10 };
+    this.state = { time: {}, seconds: 30 };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
     this.countDown = this.countDown.bind(this);
@@ -56,8 +56,8 @@ countDown() {
   render() {
     return(
       <div>
-        <button onClick={this.startTimer}>Start</button>
-         s: {this.state.time.s}
+        <button onClick={this.startTimer}>Timer</button><br/> <br/>
+         {this.state.time.s}  seconds
       </div>
     );
   }

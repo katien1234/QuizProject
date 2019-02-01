@@ -5,7 +5,6 @@ import Form from './components/Form.js';
 import Question from './components/Question.js';
 import Answer from './components/Answer.js';
 import Timer from './components/Timer.js';
-
 import Login from './Login.js';
 import SignIn from './SignIn.js';
 
@@ -14,13 +13,13 @@ class App extends Component {
     constructor() {
         super();
 
-    this.clickTrue = this.clickTrue.bind(this);
-    this.clickFalse = this.clickFalse.bind(this);
+    //this.clickTrue = this.clickTrue.bind(this);
+    //this.clickFalse = this.clickFalse.bind(this);
    
    
     }
 
-    state = {
+   /* state = {
       quest: undefined,
       answer: undefined,
       category: undefined,
@@ -74,7 +73,7 @@ clickFalse(){
     console.log("Correct")
   }
   else console.log("Wrong")
-}
+}*/
 
 /* Can go in ap render if want it on app page
 <Form getQuiz={this.getQuiz} />
@@ -93,7 +92,7 @@ clickFalse(){
     return (
       <div className="App">
         <Titles/>
-        <SignIn/>
+        
       </div>
     );
   }

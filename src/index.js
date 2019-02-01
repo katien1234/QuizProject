@@ -4,33 +4,31 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import Quiz from './Quiz';
 import CreateQuiz from './CreateQuiz'
 import Login from './Login'
+import MasterQuiz from './MasterQuiz'
+
 
 
 const routing = (
     <Router>
     <div>
-          <ul>
+          <ul className="Home">
           <li>
               <Link to="/">Home</Link>
+          <Link to="/Login">Login or Sign Up</Link>
           </li>
           </ul>
-          <ul className="Login">
-           <li> <Link to="/Login">Login or Sign Up</Link>
+          <ul className="TakeQuiz">
+           <li> <Link to="/MasterQuiz">Take a Quiz!</Link>
           </li>
           </ul>
-          <ul className="StartButton">
-           <li> <Link to="/Quiz">Take a Quiz!</Link>
-          </li>
-          </ul>
-           <ul className="CreateQuiz">
+           <ul className="MakeQuiz">
            <li> <Link to="/CreateQuiz">Create a Quiz!</Link>
           </li>
           </ul>
         <Route exact path="/" component={App} />
-        <Route path="/Quiz" component={Quiz} />
+        <Route path="/MasterQuiz" component={MasterQuiz} />
         <Route path="/CreateQuiz" component={CreateQuiz} />
         <Route path="/Login" component={Login} />
       </div>

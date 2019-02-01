@@ -1,4 +1,6 @@
 import React from 'react';
+import './Titles.css';
+
 const Titles = (props) =>{
   return (
     <div>
