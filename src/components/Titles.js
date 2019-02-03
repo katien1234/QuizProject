@@ -1,11 +1,11 @@
 import React from 'react';
-import './Titles.css';
+
 
 const Titles = (props) =>{
   return (
-    <div>
+    <div className="Title">
       <h1>Quiz App </h1>
-      <p> Test yourself!</p>
+      <p>True or False</p>
     </div>
   )
 }

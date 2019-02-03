@@ -1,0 +1,92 @@
+.Title{
+    text-align: center;
+    position: fixed;
+    top: 5%;
+    left:39%;
+    border: 15px solid black;
+    padding: 25px;
+    margin: 25px;
+    background-color: white; opacity: 0.8;
+    
+}
+
+.All input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    
+  }
+
+.All input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+.All button {
+    background-color: black;
+    color: white;
+    border: 2px solid #555555;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+  }
+  
+ .All button:hover {
+    background-color: white;
+    color: black;
+  }
+
+.login {
+  text-align: center;
+  position: fixed;
+  bottom: 27.5%;
+  left:30%;
+  border: 25px solid blue;
+  padding: 25px;
+  margin: 25px;
+ 
+}
+
+.SignUp {
+    text-align: center;
+    position: fixed;
+    bottom: 22.5%;
+    right: 30%;
+    border: 25px solid purple;
+    padding: 25px;
+    margin: 25px;
+}
+
+.Delete {
+    text-align: center;
+    position: fixed;
+    bottom: 30%;
+    right: 10%;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+   
+}
+.UpdateAccount {
+    text-align: center;
+    position: fixed;
+    bottom: 23%;
+    left: 10%;
+    border: 25px solid red;
+    padding: 25px;
+    margin: 25px;
+}
+
+.LoginBox {
+    width: 177px;
+    height: 170px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+    position: fixed;
+    bottom: 29%;
+    left:31%
+}

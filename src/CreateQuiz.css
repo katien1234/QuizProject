@@ -3,32 +3,79 @@ text-align: center;
   
 }
 
-
-.createQuiz {
-
-  text-align: center;
-  position: fixed;
-  bottom: 65%;
-  right:20%
+.CUDQuestion{
+  background-color: purple; opacity: 0.65;
+  position:fixed;
+  bottom: 8%;
+  right:7%;
+  width: 560px;
+  height: 500px;
+  border: 25px solid black; 
+  padding: 25px;
+  margin: 25px;
 }
 
+.createQuiz {
+  text-align: center;
+  position: fixed;
+  bottom: 45%;
+  right:11%
+
+}
 
 .updateQuiz {
 text-align: center;
   position: fixed;
-  bottom: 50%;
-  right:20%
+  bottom: 45%;
+  right:29%
 }
 
 .deleteQuiz {
 text-align: center;
   position: fixed;
-  bottom: 35%;
+  bottom: 15%;
   right: 20%
 }
 
 .getQuestions {
- 
-bottom: 30%;
-left: 30%
+position: fixed;
+top: 18%;
+left: 7%;
+width: 750px;
+height: 575px;
+border: 25px solid purple;
+padding: 25px;
+margin: 25px;
+background-color: white; opacity: 0.6;
+text-align: center;
+}
+
+
+.All input[type=text] {
+  text-align: center;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.All input[type=password] {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 6px 0;
+  box-sizing: border-box;
+}
+
+.All button {
+  background-color: black;;
+  color: white;
+  border: 2px solid #555555;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 6px 0;
+}
+
+.All button:hover {
+  background-color: white;
+  color: black;
 }

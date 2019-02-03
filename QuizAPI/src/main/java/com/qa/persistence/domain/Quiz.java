@@ -45,7 +45,4 @@ public class Quiz {
 		this.category = category;
 	}
 	
-	
-	
-	
 }

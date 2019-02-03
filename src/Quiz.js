@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DisplayQuiz from './components/DisplayQuiz';
-import Timer from './components/Timer';
+import './CreateQuiz.css';
 
 
 class Quiz extends Component {
@@ -44,12 +44,9 @@ class Quiz extends Component {
       return (
         <div className="Quiz">
         <button onClick={this.getQuiz}>Start</button>
-        
-          {this.state.quizList.map((item,key) => 
-            <DisplayQuiz item={item} key={item.id}/>)}
- 
+        {this.state.quizList.map((item,key) => 
+        <DisplayQuiz item={item} key={item.id}/>)}
         </div>
-        
       );
     }
   }

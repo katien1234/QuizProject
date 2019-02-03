@@ -15,7 +15,7 @@ const routing = (
     <div>
           <ul className="Home">
           <li>
-              <Link to="/">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/Login">Login or Sign Up</Link>
           </li>
           </ul>

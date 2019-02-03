@@ -28,14 +28,6 @@ public class QuizDBRepository implements QuizRepository{
 		return util.getJSONForObject(quizes);
 		
 	}
-	
-	@Transactional(REQUIRED)
-	public String getQuizByCat(String category) {
-		Query query = manager.createQuery("Select a FROM Quiz a WHERE a.Category = " + category);
-		Collection<Quiz> quizes = (Collection<Quiz>) query.getResultList();
-		return util.getJSONForObject(quizes);
-		
-	}
 		
 	@Transactional(REQUIRED)
 	public String createQuiz(String qui) {
@@ -62,8 +54,6 @@ public class QuizDBRepository implements QuizRepository{
 		
 		return "{\"message\": \"Quiz sucessfully updated\"}";
 	}
-	
-	
 	
 	private Quiz findQuiz(String question) {
 		return manager.find(Quiz.class, question);

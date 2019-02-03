@@ -1,9 +1,13 @@
 .App {
   text-align: center;
+  font-size: 40px;
+  top: 30%
 }
 
 body {
-  background-color: white;
+ background-image: url('https://lh3.googleusercontent.com/proxy/q1PrsAovn7FCOaYTM4frsFQ9TINIP29WTj-G6tV5IH99ewAS5iILT36zbBBRFr58EwELFp-418rsC2XtmWeCA9mrhUYQdFTZxOcSyhJsPr0iLY7nmT6u28yMCinw1uwNG1FEFDfZXFLCeFEzTiBT4oJh7n2JJJJ8GbgPDr7S7h5mng312owHV92ShkKKHPuJHA=s0-d');
+ background-size: cover;
+
 }
 
 .App-header {

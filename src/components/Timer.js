@@ -17,7 +17,6 @@ secondsToTime(secs){
     let minutes = Math.floor(divisor_for_minutes / 60);
     let divisor_for_seconds = divisor_for_minutes % 60;
     let seconds = Math.ceil(divisor_for_seconds);
-
     let obj = {
     "m": minutes,
     "s": seconds
@@ -45,13 +44,12 @@ countDown() {
       seconds: seconds,
     });
     
-    
     if (seconds === 0) { 
       clearInterval(this.timer);
     }
   }
 
-//m: {this.state.time.m} PUT IN RENDER IF YOU WANT MINS
+//m: {this.state.time.m} Put in render for minutes 
 
   render() {
     return(
