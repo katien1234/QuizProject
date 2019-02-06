@@ -32,28 +32,42 @@ public class AccountDBRepository implements AccountRepository {
 		
 	@Transactional(REQUIRED)
 	public String createAccount(String accoun) {
+	try {
 		Account anAccount = util.getObjectForJSON(accoun, Account.class);
 		manager.persist(anAccount);
 		return "{\"message\": \"Account has been sucessfully added\"}";
 	}
+	catch (Exception e) {
+		return "{\"message\": \"Account not successfully added\"}";
+	  }
+	}
 	
 	@Transactional(REQUIRED)
 	public String deleteAccount(String email) {
+	try {
 		Account accountInDB = findAccount(email);
 		if (accountInDB != null) {
 			manager.remove(accountInDB);   
 		}
 		return "{\"message\": \"Account sucessfully deleted\"}";
 	}
+	catch (Exception e) {
+		return "{\"message\": \"Account not successfully deleted\"}";
+ 	  }
+	}
 	
 	@Transactional (REQUIRED)
 	public String updateAccount(String email, String account) {
+	try {
 		Account theAccount = findAccount(email);
 		manager.remove(theAccount);
 		Account anAccount = util.getObjectForJSON(account,  Account.class);
 		manager.persist(anAccount);
-		
 		return "{\"message\": \"Account sucessfully updated\"}";
+	}
+	catch (Exception e) {
+		return "{\"message\": \"Account not successfully updated\"}";
+	  }
 	}
 	
 	@Transactional (REQUIRED)
@@ -67,6 +81,7 @@ public class AccountDBRepository implements AccountRepository {
 			return "{\"message\": \"Incorrect password or email\"}";
 	}
 	
+	
 	private Account findAccount(String email) {
 		return manager.find(Account.class, email);
 	}
@@ -79,6 +94,4 @@ public class AccountDBRepository implements AccountRepository {
 		this.util = util;
 	}
 
-	
-	
 }

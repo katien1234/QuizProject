@@ -31,28 +31,42 @@ public class QuizDBRepository implements QuizRepository{
 		
 	@Transactional(REQUIRED)
 	public String createQuiz(String qui) {
+	try {
 		Quiz anQuiz = util.getObjectForJSON(qui, Quiz.class);
 		manager.persist(anQuiz);
-		return "{\"message\": \"Quiz has been sucessfully added\"}";
+		return "{\"message\": \"Question has been sucessfully added\"}";
+	}
+	catch (Exception e) {
+		return "{\"message\": \"Question not successfully added\"}";
+	  }
 	}
 	
 	@Transactional(REQUIRED)
 	public String deleteQuiz(String question) {
+	try {
 		Quiz quizInDB = findQuiz(question);
 		if (quizInDB != null) {
 			manager.remove(quizInDB);   
 		}
-		return "{\"message\": \"Quiz sucessfully deleted\"}";
+		return "{\"message\": \"Question sucessfully deleted\"}";
+	}
+	catch (Exception e) {
+		return "{\"message\": \"Question not successfully deleted\"}";
+ 	  }
 	}
 	
 	@Transactional (REQUIRED)
 	public String updateQuiz(String question, String quiz) {
+	try {
 		Quiz theQuiz = findQuiz(question);
 		manager.remove(theQuiz);
 		Quiz anQuiz = util.getObjectForJSON(quiz,  Quiz.class);
 		manager.persist(anQuiz);
-		
-		return "{\"message\": \"Quiz sucessfully updated\"}";
+		return "{\"message\": \"Question sucessfully updated\"}";
+	}
+	catch (Exception e) {
+		return "{\"message\": \"Question not successfully updated\"}";
+	  }
 	}
 	
 	private Quiz findQuiz(String question) {

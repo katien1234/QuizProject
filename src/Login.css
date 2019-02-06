@@ -1,11 +1,8 @@
-.Title{
+.TitleLogin{
     text-align: center;
-    position: fixed;
-    top: 5%;
-    left:39%;
     border: 15px solid black;
-    padding: 25px;
-    margin: 25px;
+    padding: 2%;
+    margin: 5%;
     background-color: white; opacity: 0.8;
     
 }
@@ -17,6 +14,10 @@
     box-sizing: border-box;
     
   }
+
+  vh 
+  vw 
+
 
 .All input[type=password] {
     width: 100%;
@@ -39,54 +40,40 @@
     color: black;
   }
 
-.login {
+.LoginBox {
   text-align: center;
-  position: fixed;
-  bottom: 27.5%;
-  left:30%;
   border: 25px solid blue;
   padding: 25px;
   margin: 25px;
- 
+  width: 20%;
+ margin: 7 auto
 }
 
 .SignUp {
     text-align: center;
-    position: fixed;
-    bottom: 22.5%;
-    right: 30%;
     border: 25px solid purple;
     padding: 25px;
     margin: 25px;
+    width: 20%;
+    margin: 10;
+    max-width: 600px;
 }
 
 .Delete {
     text-align: center;
-    position: fixed;
-    bottom: 30%;
-    right: 10%;
     border: 25px solid green;
     padding: 25px;
     margin: 25px;
+    width: 20%;
+    margin: 0 auto
    
 }
 .UpdateAccount {
     text-align: center;
-    position: fixed;
-    bottom: 23%;
-    left: 10%;
     border: 25px solid red;
     padding: 25px;
     margin: 25px;
+    width: 20%;
+    margin: 0 auto
 }
 
-.LoginBox {
-    width: 177px;
-    height: 170px;
-    border: 25px solid green;
-    padding: 25px;
-    margin: 25px;
-    position: fixed;
-    bottom: 29%;
-    left:31%
-}

@@ -20,7 +20,7 @@ class DisplayQuiz extends Component {
     }
 
     clickTrue(){
-        if (this.state.answer === "True"){
+        if (this.state.answer === "True" || this.state.answer === "true"){
           console.log("Correct")
           this.setState({
             counter: "Correct"
@@ -32,7 +32,7 @@ class DisplayQuiz extends Component {
       }
 
       clickFalse(){
-        if(this.state.answer === "False"){
+        if(this.state.answer === "False" || this.state.answer === "false"){
           console.log("Correct")
           this.setState({
             counter: "Correct"
