@@ -23,11 +23,12 @@ class DisplayQuiz extends Component {
         if (this.state.answer === "True" || this.state.answer === "true"){
           console.log("Correct")
           this.setState({
-            counter: "Correct"
+            counter: "Correct",
+            
           })
         }
         else this.setState({
-            counter: "Incorrect"
+            counter: "Incorrect",
           })
       }
 
@@ -35,11 +36,11 @@ class DisplayQuiz extends Component {
         if(this.state.answer === "False" || this.state.answer === "false"){
           console.log("Correct")
           this.setState({
-            counter: "Correct"
+            counter: "Correct",
           })
         }
         else this.setState({
-            counter: "Incorrect"
+            counter: "Incorrect",
           })
       }
       
@@ -47,6 +48,7 @@ class DisplayQuiz extends Component {
           this.setState({
               question: this.props.item.question,
               answer: this.props.item.answer
+              
           })
       }
 
@@ -56,11 +58,12 @@ class DisplayQuiz extends Component {
         return (
             <div className="quiz">
                 <p>
+                    
                     {this.props.item.question}</p>
                 <button name="True" onClick={this.clickTrue}>True</button> 
                 <button id = "True"name="False" onClick={this.clickFalse}> False </button> 
                 <p>
-           {this.state.counter}
+           {this.state.counter}<br/>
           </p>
             </div>
         );
