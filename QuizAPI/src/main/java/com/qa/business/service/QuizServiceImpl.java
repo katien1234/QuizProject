@@ -17,6 +17,10 @@ public class QuizServiceImpl implements QuizService {
 	public String getQuiz() {
 		return repo.getQuiz();
 	}
+	
+	public String getQuizByCat(String category) {
+		return repo.getQuizByCat(category);
+	}
 
 	public String addQuiz(String quiz) {
 		try {
