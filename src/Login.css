@@ -4,29 +4,27 @@
     padding: 2%;
     margin: 5%;
     background-color: white; opacity: 0.8;
-    
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px
 }
 
-.All input[type=text] {
+input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     
   }
-
-  vh 
-  vw 
-
-
-.All input[type=password] {
+ 
+input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
   }
 
-.All button {
+button {
     background-color: black;
     color: white;
     border: 2px solid #555555;
@@ -35,45 +33,45 @@
     margin: 8px 0;
   }
   
- .All button:hover {
+button:hover {
     background-color: white;
     color: black;
   }
 
 .LoginBox {
   text-align: center;
-  border: 25px solid blue;
+  border: 25px solid #667292;
   padding: 25px;
   margin: 25px;
-  width: 20%;
- margin: 7 auto
+  
 }
 
 .SignUp {
     text-align: center;
-    border: 25px solid purple;
+    border: 25px solid #622569;
     padding: 25px;
     margin: 25px;
-    width: 20%;
-    margin: 10;
-    max-width: 600px;
+   
+
 }
 
 .Delete {
     text-align: center;
-    border: 25px solid green;
+    border: 25px solid #87bdd8;
     padding: 25px;
     margin: 25px;
-    width: 20%;
-    margin: 0 auto
-   
+      
 }
 .UpdateAccount {
     text-align: center;
-    border: 25px solid red;
+    border: 25px solid #5b9aa0;
     padding: 25px;
     margin: 25px;
-    width: 20%;
-    margin: 0 auto
 }
 
+.flex-container {
+display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}

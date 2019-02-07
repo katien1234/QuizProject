@@ -131,48 +131,55 @@ class CreateQuiz extends Component {
 
     render() {
         return (
+            <div><br/><br/><br/><br/>
+            <div className="CreateQuizText">
+                    <h2> Create your own Quiz! </h2>
+                </div>
             <div className="All">
-                <div className="CreateQuizText">
-                    <h1> Create your own Quiz! </h1>
+                <div className="Row">
+                    <div className="CUDQuestion">
+                        <div>
+                            <form className="createQuiz" onSubmit={this.createQuiz}>
+                                <input name="question" type="text" placeholder="Question" required /><br />
+                                <input name="answer" type="text" placeholder="Answer: True or False" required /><br />
+                                <input name="category" type="text" placeholder="Username or Category" required /><br />
+                                <button>Create a question!</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form className="updateQuiz" onSubmit={this.updateQuiz}>
+                                <input name="question" type="text" placeholder="Question" required /><br />
+                                <input name="answer" type="text" placeholder="Answer: True or False" required /><br />
+                                <input name="category" type="text" placeholder="Username or Category" required /><br />
+                                <button>Update question</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form className="deleteQuiz" onSubmit={this.deleteQuiz}>
+                                <input name="question" type="text" placeholder="Question" required /><br />
+                                <input name="answer" type="text" placeholder="Answer: True or False" required /><br />
+                                <input name="category" type="text" placeholder="Username or Category" required /><br />
+                                <button>Delete question</button>
+                            </form>
+                        </div>
+                        <div className="QuestionButtons">
+                            <div className="getQuestionsByCat">
+                                <form className="getQuizByCat" onSubmit={this.getQuizByCat}>
+                                    <input name="category" type="text" placeholder="Username or Category" required /><br />
+                                    <button>Get questions by category or username!</button>
+                                </form>
+                            </div>
+                            <div className="getQuestions">
+                                <button onClick={this.getQuiz}>Get all questions</button>
+                                {this.state.quizList.map((item, key) =>
+                                    <Question item={item} key={item.id} />)}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="CUDQuestion">
-                    <div>
-                        <form className="createQuiz" onSubmit={this.createQuiz}>
-                            <input name="question" type="text" placeholder="Question" required /><br />
-                            <input name="answer" type="text" placeholder="Answer: True or False" required /><br />
-                            <input name="category" type="text" placeholder="Username or Category" required /><br />
-                            <button>Create a question!</button>
-                        </form>
-                    </div>
-                    <div>
-                        <form className="updateQuiz" onSubmit={this.updateQuiz}>
-                            <input name="question" type="text" placeholder="Question" required /><br />
-                            <input name="answer" type="text" placeholder="Answer: True or False" required /><br />
-                            <input name="category" type="text" placeholder="Username or Category" required /><br />
-                            <button>Update question</button>
-                        </form>
-                    </div>
-                    <div>
-                        <form className="deleteQuiz" onSubmit={this.deleteQuiz}>
-                            <input name="question" type="text" placeholder="Question" required /><br />
-                            <input name="answer" type="text" placeholder="Answer: True or False" required /><br />
-                            <input name="category" type="text" placeholder="Username or Category" required /><br />
-                            <button>Delete question</button>
-                        </form>
-                    </div>
-                    <div className="getQuizByCat">
-                        <form className="getQuizByCat" onSubmit={this.getQuizByCat}>
-                            <input name="category" type="text" placeholder="Username or Category" required />
-                            <button>Get questions by category</button>
-                        </form>
-                    </div>
-                </div>
-                <div className="getQuestions">
-                    <button onClick={this.getQuiz}>Get questions</button>
-                    {this.state.quizList.map((item, key) =>
-                        <Question item={item} key={item.id} />)}
-                </div>
+
                 <ToastContainer />
+            </div>
             </div>
         )
     }

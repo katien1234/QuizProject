@@ -7,12 +7,16 @@ class MasterQuiz extends Component {
 
     render() {
       return (
+        <div><br/><br/><br/>
         <div className="MasterQuizText">
-        <h1> Test yourself </h1>
+        <h2> Test yourself </h2>
         <h2>True or false!</h2>
+       </div><br/><br/>
+       <div className="BoxAround">
         <div className="Quiz">
-        </div>
         <Quiz/>
+        </div>
+        </div>
         <div className="Timer">
         <Timer/>
         </div>

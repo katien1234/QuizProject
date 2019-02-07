@@ -12,7 +12,6 @@ class Quiz extends Component {
     answer: undefined,
     quizList: [],
     quizListCat: [],
-    counter: 0,
   }
 
 
@@ -37,7 +36,6 @@ class Quiz extends Component {
       question: response[0].question,
       answer: response[0].answer,
       quizList: tempQuizList,
-      counter: 0
     });
 
   }
@@ -67,7 +65,7 @@ class Quiz extends Component {
     }
     catch (error) {
       console.log("Error please try again" + error);
-      toast("Please select a category");
+      toast("Please enter a correct category or username");
     }
   }
 
@@ -75,20 +73,20 @@ class Quiz extends Component {
   render() {
     return (
       <div>
-        <div className="Quiz">
-          <button onClick={this.getQuiz}>Start</button>
-          {this.state.quizList.map((item, key) =>
-            <DisplayQuiz item={item} key={item.id} />)}
-        </div>
-        <div className="QuizByCat">
+        <div className="CategoryQuestions">
           <form className="getQuizByCat" onSubmit={this.getQuizByCat}>
+            <button>Get questions by category or username</button><br />
             <input name="category" type="text" placeholder="Username or Category" required />
             {this.state.quizListCat.map((item, key) =>
               <DisplayQuiz item={item} key={item.id} />)}
-            <button>Get questions by category</button>
           </form>
+          <div className="Quiz">
+            <button onClick={this.getQuiz}>Random Questions</button>
+            {this.state.quizList.map((item, key) =>
+              <DisplayQuiz item={item} key={item.id} />)}
+          </div>
+          <ToastContainer />
         </div>
-        <ToastContainer />
       </div>
     );
   }

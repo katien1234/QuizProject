@@ -5,8 +5,9 @@
 }
 
 body {
- background-image: url('https://lh3.googleusercontent.com/proxy/q1PrsAovn7FCOaYTM4frsFQ9TINIP29WTj-G6tV5IH99ewAS5iILT36zbBBRFr58EwELFp-418rsC2XtmWeCA9mrhUYQdFTZxOcSyhJsPr0iLY7nmT6u28yMCinw1uwNG1FEFDfZXFLCeFEzTiBT4oJh7n2JJJJ8GbgPDr7S7h5mng312owHV92ShkKKHPuJHA=s0-d');
+ background-image: url('https://i0.wp.com/i.pinimg.com/originals/d9/2b/5d/d92b5d919598bac98d84996375b01bd9.jpg');
  background-size: cover;
+ background-attachment:fixed
 
 }
 
@@ -19,6 +20,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
 .Title {
@@ -27,6 +29,5 @@ body {
     padding: 2%;
     margin: 5%;
     background-color: white; opacity: 0.8;
-    width: 20%;
-    margin: 0 auto
+  
 }

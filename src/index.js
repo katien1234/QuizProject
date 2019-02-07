@@ -13,12 +13,14 @@ import MasterQuiz from './MasterQuiz'
 const routing = (
     <Router>
     <div>
+      <div className="navBar">
           <ul className="Home">
           <li>
           <Link to="/">Home</Link>
           <Link to="/Login">Login or Sign Up</Link>
           </li>
           </ul>
+          </div>
           <ul className="TakeQuiz">
            <li> <Link to="/MasterQuiz">Take a Quiz!</Link>
           </li>
