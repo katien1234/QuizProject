@@ -11,7 +11,7 @@ class MasterQuiz extends Component {
         <div className="MasterQuizText">
         <h2> Test yourself </h2>
         <h2>True or false!</h2>
-       </div><br/><br/>
+       </div><br/>
        <div className="BoxAround">
         <div className="Quiz">
         <Quiz/>

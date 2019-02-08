@@ -8,6 +8,6 @@ INSERT INTO QUIZ (question, answer, category) VALUES ('The fastest time to eat 1
 INSERT INTO QUIZ (question, answer, category) VALUES ('David Bowie declined a knighthood from the Queen', 'True','Music');
 INSERT INTO QUIZ (question, answer, category) VALUES ('Tom Cruise has never won an Oscar', 'True','Fame');
 INSERT INTO QUIZ (question, answer, category) VALUES ('Lightning never strikes in the same place twice.', 'False','Earth');
-INSERT INTO QUIZ (question, answer, category) VALUES ('Humans can’t breathe and swallow at the same time.', 'True','Health');
+INSERT INTO QUIZ (question, answer, category) VALUES ('Humans cant breathe and swallow at the same time.', 'True','Health');
 INSERT INTO QUIZ (question, answer, category) VALUES ('There are more cells of bacteria in your body than there are human cells.', 'True','Health');
 INSERT INTO QUIZ (question, answer, category) VALUES ('The top of the Eiffel Tower leans away from the sun.', 'True','Earth');
