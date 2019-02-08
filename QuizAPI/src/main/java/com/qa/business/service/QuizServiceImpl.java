@@ -12,12 +12,13 @@ public class QuizServiceImpl implements QuizService {
 	private QuizRepository repo;
 
 	@Inject
+
 	private JSONUtil util;
 
 	public String getQuiz() {
 		return repo.getQuiz();
 	}
-	
+
 	public String getQuizByCat(String category) {
 		return repo.getQuizByCat(category);
 	}
@@ -27,19 +28,16 @@ public class QuizServiceImpl implements QuizService {
 			Quiz anQuiz = util.getObjectForJSON(quiz, Quiz.class);
 			String quizName = anQuiz.getQuestion();
 			String checkAnswer = anQuiz.getAnswer();
-			if(checkTrueOrFalse(checkAnswer) && checkSwearwords(quizName)) {
+			if (checkTrueOrFalse(checkAnswer) && checkSwearWords(quizName)) {
 				return repo.createQuiz(quiz);
+			} else if (checkTrueOrFalse(checkAnswer) && !checkSwearWords(quizName)) {
+				return "{\"message\": \"No swear words please\"}";
+
+			} else if (!checkTrueOrFalse(checkAnswer) && checkSwearWords(quizName)) {
+				return "{\"message\": \"True or False answer\"}";
+			} else {
+				return "{\"message\": \"Answer should be true or false and no swear words\"}";
 			}
-		else if (checkTrueOrFalse(checkAnswer) && !checkSwearwords(quizName)) {
-			return "{\"message\": \"No swear words please\"}";
-			
-		}
-		else if (!checkTrueOrFalse(checkAnswer) && checkSwearwords(quizName)) {
-			return "{\"message\": \"True or False answer\"}";
-			}
-		else {
-			return "{\"message\": \"Answer should be true or false and no swear words\"}";
-		}
 		} catch (Exception e) {
 			return "{\"message\": " + e.toString() + "}";
 		}
@@ -55,17 +53,27 @@ public class QuizServiceImpl implements QuizService {
 	}
 
 	public String updateQuiz(String question, String quiz) {
-		Quiz anQuiz = util.getObjectForJSON(quiz, Quiz.class);
-		String quizName = anQuiz.getQuestion();
+		try {
+			Quiz anQuiz = util.getObjectForJSON(quiz, Quiz.class);
+			String quizName = anQuiz.getQuestion();
+			String checkAnswer = anQuiz.getAnswer();
+			if (checkTrueOrFalse(checkAnswer) && checkSwearWords(quizName)) {
+				return repo.updateQuiz(question, quiz);
+			} else if (checkTrueOrFalse(checkAnswer) && !checkSwearWords(quizName)) {
+				return "{\"message\": \"No swear words please\"}";
 
-		if (checkSwearwords(quizName)) {
-			return repo.updateQuiz(question, quiz);
-		} else {
-			return "{\"message\": \"Please no swear words\"}";
+			} else if (!checkTrueOrFalse(checkAnswer) && checkSwearWords(quizName)) {
+				return "{\"message\": \"True or False answer\"}";
+			} else {
+				return "{\"message\": \"Answer should be true or false and no swear words\"}";
+			}
+		} catch (Exception e) {
+			return "{\"message\": " + e.toString() + "}";
 		}
 	}
 
-	public boolean checkSwearwords(String quizName) {
+	// No swear words = return true
+	public boolean checkSwearWords(String quizName) {
 		String toLower = quizName.toLowerCase();
 		String[] question = toLower.split(" ");
 		for (int i = 0; i < question.length; i++) {
@@ -80,10 +88,9 @@ public class QuizServiceImpl implements QuizService {
 
 	public boolean checkTrueOrFalse(String answer) {
 		String toLower = answer.toLowerCase();
-		if(toLower.equals("true") || toLower.equals("false")) {
+		if (toLower.equals("true") || toLower.equals("false")) {
 			return true;
 		}
-			return false;
-		}
+		return false;
 	}
-	
+}

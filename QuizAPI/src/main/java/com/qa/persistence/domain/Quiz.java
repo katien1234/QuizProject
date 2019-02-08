@@ -10,9 +10,9 @@ public class Quiz {
 	private String question;
 	private String answer;
 	private String category;
-	
+
 	public Quiz() {
-		
+
 	}
 
 	public Quiz(String question, String answer, String category) {
@@ -20,15 +20,15 @@ public class Quiz {
 		this.answer = answer;
 		this.category = category;
 	}
-	
+
 	public String getQuestion() {
 		return question;
 	}
-	
+
 	public void setQuestion(String question) {
 		this.question = question;
 	}
-	
+
 	public String getAnswer() {
 		return answer;
 	}
@@ -44,5 +44,5 @@ public class Quiz {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
+
 }
