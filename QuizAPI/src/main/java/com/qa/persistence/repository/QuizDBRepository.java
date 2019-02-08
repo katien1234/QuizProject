@@ -45,7 +45,7 @@ public class QuizDBRepository implements QuizRepository{
 		return "{\"message\": \"Question has been sucessfully added\"}";
 	}
 	catch (Exception e) {
-		return "{\"message\": \"Question not successfully added\"}";
+		return "{\"message\": \"Error question has not been added, please try again\"}";
 	  }
 	}
 	
@@ -59,7 +59,7 @@ public class QuizDBRepository implements QuizRepository{
 		return "{\"message\": \"Question sucessfully deleted\"}";
 	}
 	catch (Exception e) {
-		return "{\"message\": \"Question not successfully deleted\"}";
+		return "{\"message\": \"Error question has not been deleted, please try again\"}";
  	  }
 	}
 	
@@ -73,7 +73,7 @@ public class QuizDBRepository implements QuizRepository{
 		return "{\"message\": \"Question sucessfully updated\"}";
 	}
 	catch (Exception e) {
-		return "{\"message\": \"Question not successfully updated\"}";
+		return "{\"message\": \"Error question has not been updated, please try again\"}";
 	  }
 	}
 	

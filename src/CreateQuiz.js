@@ -100,13 +100,12 @@ class CreateQuiz extends Component {
         }
         catch (error) {
             console.log("Error please try again" + error);
-            toast("Please select a category");
         }
     }
 
     getQuizByCat = async (e) => {
         e.preventDefault();
-
+        try{
         const api_call = await fetch('http://localhost:1337/localhost:8080/QuizAPI/api/quiz/getQuizByCat/' + e.target.elements.category.value);
         const response = await api_call.json();
         const tempQuizList = []
@@ -126,6 +125,11 @@ class CreateQuiz extends Component {
             answer: response[0].answer,
             quizList: tempQuizList,
         });
+        }
+    catch (error) {
+            console.log("Error please try again" + error);
+            toast("Please select a category");    
+    }
 
     }
 
@@ -135,7 +139,7 @@ class CreateQuiz extends Component {
             <div className="CreateQuizText">
                     <h2> Create your own Quiz! </h2>
                 </div>
-            <div className="All">
+            <div className="AllCreate">
                 <div className="Row">
                     <div className="CUDQuestion">
                         <div>
