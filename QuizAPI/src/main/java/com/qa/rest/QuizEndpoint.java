@@ -24,10 +24,10 @@ public class QuizEndpoint {
 		return service.getQuiz();
 	}
 	
-	@Path("/getQuizByCat")
+	@Path("/getQuizByCat/{id}")
 	@GET
 	@Produces({ "application/json" })
-	public String getQuizByCat(String category) {
+	public String getQuizByCat(@PathParam("id") String category) {
 		return service.getQuizByCat(category);
 	}
 	

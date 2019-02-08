@@ -11,7 +11,6 @@ public class Account {
 	private String email;
 	private String username;
 	private String password;
-	private Long highscore;
 	
 	public Account() {
 
@@ -33,12 +32,6 @@ public class Account {
 		setPassword(password);
 	}
 	
-	public Account(String email, String username, String password, Long highscore) {
-		this.email = email;
-		this.username = username;
-		this.password = password;
-		this.highscore = highscore;
-	}
 
 	public String getEmail() {
 		return email;
@@ -65,12 +58,4 @@ public class Account {
 		this.password = password;
 	}
 
-	public Long getHighscore() {
-		return highscore;
-	}
-
-	public void setHighscore(Long highscore) {
-		this.highscore = highscore;
-	}
-	
 }

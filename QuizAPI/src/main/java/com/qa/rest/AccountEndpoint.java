@@ -56,7 +56,6 @@ public class AccountEndpoint {
 		
 	}
 	
-	
 	public void setService(AccountService service) {
 		this.service = service;
 	}
