@@ -102,7 +102,7 @@ class CreateQuiz extends Component {
             console.log("Error please try again" + error);
         }
     }
-
+  
     getQuizByCat = async (e) => {
         e.preventDefault();
         try{
