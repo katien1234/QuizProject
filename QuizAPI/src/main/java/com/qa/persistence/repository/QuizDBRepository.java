@@ -56,6 +56,7 @@ public class QuizDBRepository implements QuizRepository {
 				manager.remove(quizInDB);
 			}
 			return "{\"message\": \"Question sucessfully deleted\"}";
+			 
 		} catch (Exception e) {
 			return "{\"message\": \"Error question has not been deleted, please try again\"}";
 		}
